@@ -39,6 +39,6 @@ jobs:
 
       # run tests!
       - run:
-          name:
+          name: yarn test
           command: yarn test
           working_directory: ~/project/testing
