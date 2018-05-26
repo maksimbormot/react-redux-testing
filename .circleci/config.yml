@@ -27,7 +27,9 @@ jobs:
           - v1-dependencies-
           pwd: ~/project/testing
 
-      - run: yarn install
+      - run:
+          name: yarn install
+          command: yarn install
           working_directory: ~/project/testing
 
       - save_cache:
@@ -36,5 +38,7 @@ jobs:
           key: v1-dependencies-{{ checksum "testing/package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run:
+          name:
+          command: yarn test
           working_directory: ~/project/testing
