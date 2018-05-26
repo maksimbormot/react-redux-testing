@@ -28,6 +28,7 @@ jobs:
           pwd: ~/project/testing
 
       - run: yarn install
+          pwd: ~/project/testing
 
       - save_cache:
           paths:
