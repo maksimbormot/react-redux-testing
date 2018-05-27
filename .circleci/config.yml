@@ -27,17 +27,27 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: coveralls token
+          command: echo repo_token: $COVERALLS_REPO_TOKEN > .coveralls.yml
+          working_directory: ~/project/testing
+
+      - run:
           name: yarn install
           command: yarn install
           working_directory: ~/project/testing
 
       - save_cache:
           paths:
-            - ~/project/testing/node_modules 
+            - ~/project/testing/node_modules
           key: v1-dependencies-{{ checksum "testing/package.json" }}
 
       # run tests!
       - run:
           name: yarn test
           command: yarn test
+          working_directory: ~/project/testing
+
+      - run:
+          name: coveralls
+          command: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
           working_directory: ~/project/testing
