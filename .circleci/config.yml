@@ -28,7 +28,7 @@ jobs:
 
       - run:
           name: coveralls token
-          command: echo repo_token: $COVERALLS_REPO_TOKEN > .coveralls.yml
+          command: "echo repo_token: $COVERALLS_REPO_TOKEN > .coveralls.yml"
           working_directory: ~/project/testing
 
       - run:
