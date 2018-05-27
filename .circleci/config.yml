@@ -43,8 +43,8 @@ jobs:
 
       # run tests!
       - run:
-          name: yarn test
-          command: yarn test
+          name: yarn coverage
+          command: yarn coverage
           working_directory: ~/project/testing
 
       - run:
