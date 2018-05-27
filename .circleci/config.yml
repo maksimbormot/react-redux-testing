@@ -47,7 +47,7 @@ jobs:
           command: yarn test
           working_directory: ~/project/testing
 
-      #- run:
-      #    name: coveralls
-      #    command: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-      #    working_directory: ~/project/testing
+      - run:
+          name: coveralls
+          command: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+          working_directory: ~/project/testing
